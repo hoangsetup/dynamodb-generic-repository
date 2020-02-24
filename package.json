@@ -1,0 +1,23 @@
+{
+  "name": "dynamodb-generic-repository",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/tsc",
+    "prestart": "npm run build",
+    "start": "node ./.dist/index.js",
+    "dev": "./node_modules/.bin/ts-node-dev ./src/index.ts",
+    "lint": "./node_modules/.bin/tslint --project .",
+    "lint:fix": "./node_modules/.bin/tslint --project . --fix"
+  },
+  "keywords": [],
+  "author": "hoangdv <hoang.dv@outlook.com> (https://codetheworld.io/)",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.2"
+  }
+}
