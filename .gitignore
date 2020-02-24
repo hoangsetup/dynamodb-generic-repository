@@ -109,3 +109,6 @@ dist
 
 .dist/
 
+src/migrate/data/*
+!src/migrate/data/keep.me
+

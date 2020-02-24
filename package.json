@@ -16,8 +16,14 @@
   "author": "hoangdv <hoang.dv@outlook.com> (https://codetheworld.io/)",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^13.7.4",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^6.0.0",
     "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.624.0",
+    "dotenv": "^8.2.0"
   }
 }
