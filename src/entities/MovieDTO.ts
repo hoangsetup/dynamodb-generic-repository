@@ -3,7 +3,12 @@
  */
 import { MovieInfoDTO } from './MovieInfoDTO';
 
-export class MovieDTO {
+export interface IMovieKey {
+  title: string;
+  year: number;
+}
+
+export class MovieDTO implements IMovieKey {
   public title: string;
   public year: number;
 
