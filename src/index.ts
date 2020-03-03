@@ -1,14 +1,28 @@
+/* tslint:disable:no-console */
 /**
  * Created by SUN-ASTERISK\dinh.van.hoang on 2/24/20
  */
 
-(async () => {
-  await new Promise(resolve => {
-    setTimeout(resolve, 1000);
-  });
-  // tslint:disable-next-line:no-console
-  console.log('Hello TS!');
+import express from 'express';
+import { ENVIRONMENTS } from './config';
+import { HomeController } from './modules/home/HomeController';
+import { App } from './server/App';
 
-  // Keep running
-  setInterval(() => {/**/}, 1000);
+(async () => {
+  const app = new App({
+    port: ENVIRONMENTS.PORT,
+    controllers: [
+      new HomeController(),
+    ],
+    middleware: [
+      express.json(),
+      express.urlencoded({ extended: true }),
+      (req, res, next) => {
+        console.log('Request logged:', req.method, req.path);
+        next();
+      },
+    ],
+  });
+
+  app.start();
 })();
