@@ -89,7 +89,7 @@ export class App {
       routeInfo.push(...controllerRoutes.map((r) => {
         return {
           method: r.method.toUpperCase(),
-          path: controller.getPath() + r.path !== '/' ? r.path : '',
+          path: (controller.getPath() !== '/' ? controller.getPath() : '') + (r.path !== '/' ? r.path : ''),
           handler: `${controller.constructor.name}.${r.handler.name}`,
         }
       }));

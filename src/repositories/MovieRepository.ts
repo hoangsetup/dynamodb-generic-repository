@@ -14,9 +14,9 @@ export class MovieRepository extends BaseRepository<Movie, IMovieKey> {
   }
 
   /**
-   * Get movies of a year
+   * Get movie of a year
    * @param {number} year Year to get
-   * @returns {Promise<Movie[]>} List of movies
+   * @returns {Promise<Movie[]>} List of movie
    */
   public getByYear(year: number): Promise<Movie[]> {
     return this.query({
